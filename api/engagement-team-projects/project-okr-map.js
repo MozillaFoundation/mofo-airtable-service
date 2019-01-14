@@ -4,7 +4,8 @@ const base = require("./base");
 const projectOKRMapTable = base.table(env.get("projectOkrMap"));
 
 module.exports = async function(req, res) {
-  const { projectID, okrs = [] } = req.body;
+  const { projectID, okrs = "" } = req.body;
+  okrs = okrs.split(",", 4);
 
   if (!okrs.length) {
     return res.sendStatus(200);
