@@ -1,7 +1,7 @@
 const env = require("./env");
 const base = require("./base");
 
-const projectOKRMapTable = base.table(env.get("projectOKRMap"));
+const projectOKRMapTable = base.table(env.get("projectOkrMap"));
 
 module.exports = async function(req, res) {
   const { projectID, okrs = [] } = req.body;
