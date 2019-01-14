@@ -5,7 +5,7 @@ const forceSSL = require("express-enforces-ssl");
 
 const env = new Habitat();
 const server = express();
-const port = env.get("port");
+const port = env.get("port") || 5000;
 
 server.enable("trust proxy");
 server.disable("x-powered-by");
