@@ -5,7 +5,7 @@ const API_KEY = (new Habitat()).get("apiKey");
 module.exports = function(req, res, next) {
   const auth = req.get("authorization");
   
-  console.log(req.headers);
+  console.log('All headers: ', req.headers);
 
   if (!auth) {
     return res.sendStatus(401);
