@@ -11,6 +11,7 @@ server.enable("trust proxy");
 server.disable("x-powered-by");
 
 server.use(forceSSL());
+server.use((req, res, next) => { console.log(req.headers); next(); })
 server.use(basicAuth({ users: env.get("apiUsers") }));
 server.use(express.json({ strict: false }));
 
