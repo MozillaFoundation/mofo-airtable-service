@@ -15,5 +15,6 @@ server.use(basicAuth({ users: env.get("apiUsers") }));
 server.use(express.json({ strict: false }));
 
 server.use("/api/engagement-team", require("./api/engagement-team-projects")(express));
+server.use("/api/shared", require("./api/shared")(express));
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
