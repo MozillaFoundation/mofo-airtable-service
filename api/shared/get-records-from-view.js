@@ -4,7 +4,8 @@ const env = require("./env");
 const allowedBases = env.get("allowedBases", []);
 
 module.exports = function(req, res) {
-  const { base, table, view, maxRecords } = req.body;
+  const { base } = req.params;
+  const { table, view, maxRecords } = req.query;
 
   if (allowedBases.indexOf(base) < 0) {
     console.error(`${base} is not an allowed base`);
