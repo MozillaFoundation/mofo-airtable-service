@@ -15,7 +15,7 @@ module.exports = function(req, res) {
   const Base = new Airtable().base(base);
   let results = [];
 
-  Base(table).select({ view, maxRecords }).eachPage((records, fetchNextPage) => {
+  Base(table).select({ view, maxRecords: maxRecords|0 }).eachPage((records, fetchNextPage) => {
     results = [
       ...results,
       ...records.map(r => r.fields)
