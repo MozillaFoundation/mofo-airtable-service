@@ -6,8 +6,8 @@ const allowedBases = env.get("allowedBases", []);
 module.exports = function(req, res) {
   const { base, table, view, maxRecords } = req.body;
 
-  if (allowedBases.indexOf(baseName) < 0) {
-    console.error(`${baseName} is not an allowed base`);
+  if (allowedBases.indexOf(base) < 0) {
+    console.error(`${base} is not an allowed base`);
     return res.sendStatus(400);
   }
 
